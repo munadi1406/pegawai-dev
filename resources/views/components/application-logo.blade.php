@@ -1,1 +1,1 @@
-<img src="{{ asset('images/logo.png')}}" alt="Hasnur Riung Energi" width="150">
+<img src="{{ asset('images/logo.png')}}" alt="Hasnur Riung Energi" width="50">

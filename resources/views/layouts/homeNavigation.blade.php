@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-color2/70 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -8,10 +8,10 @@
                     <a href="{{ route('dashboard') }}">
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
                     </a>
-                </div>
+                </div>    
 
                 <!-- Navigation Links -->
-                <div class="hidden bg-color2/40 backdrop-blur-md px-3 text-white rounded-full justify-center items-center space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden  justify-center items-center space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Home') }}
                     </x-nav-link>
@@ -26,7 +26,7 @@
                     </x-nav-link>
                     <x-dropdown align="right" >
                         <x-slot name="trigger">
-                            <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500  hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                            <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white focus:outline-none transition ease-in-out duration-150">
                                 Others
                                 <div class="ml-1">
                                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -36,17 +36,21 @@
                             </button>
                         </x-slot>
                         <x-slot name="content">
+                            <x-dropdown-link :color="'text-white'" :href="route('profile.edit')">
+                                {{ __('Contact') }}
+                            </x-dropdown-link>
+                            
                             <x-dropdown-link :href="route('profile.edit')">
-                                {{ __('Profile') }}
+                                {{ __('Kupon') }}
                             </x-dropdown-link>
                         </x-slot>
                     </x-dropdown>
                 </div>
                 <div class="flex gap-4">
-                   <a href="{{route('login')}}" class="bg-color2 h-max rounded-full px-6 py-2 text-white cursor-pointer font-semibold hover:bg-transparent hover:text-color2 transition-all ease-in-out duration-300 hover:outline hover:outline-color2">Sign In</a>
-                   <a href="{{route('register')}}" class="bg-color3 h-max rounded-full px-6 py-2 text-white cursor-pointer font-semibold hover:text-color3 hover:bg-transparent transition-all ease-in-out duration-300 hover:outline hover:outline-color3">Sign Up</a>
+                   <a href="{{route('login')}}" class="bg-color2 h-max rounded-full px-6 py-2 text-white cursor-pointer font-semibold hover:bg-transparent hover:text-white transition-all ease-in-out duration-300 hover:outline hover:outline-color2 text-xs">Sign In</a>
+                   <a href="{{route('register')}}" class="bg-color3 h-max rounded-full px-6 py-2 text-white cursor-pointer font-semibold hover:text-white hover:bg-transparent transition-all ease-in-out duration-300 hover:outline hover:outline-color3 text-xs">Sign Up</a>
                 </div>
-            </div>
+            </div> 
 
 
             <!-- Hamburger -->
