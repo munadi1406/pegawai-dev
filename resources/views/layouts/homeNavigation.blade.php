@@ -12,18 +12,18 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden  justify-center items-center space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-homepage-nav-link :href="url('/')" :active="request()->url() === url('/')">
                         {{ __('Home') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    </x-homepage-nav-link>
+                    <x-homepage-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Profile') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    </x-homepage-nav-link>
+                    <x-homepage-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('About Us') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    </x-homepage-nav-link>
+                    <x-homepage-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Carrer') }} 
-                    </x-nav-link>
+                    </x-homepage-nav-link>
                     <x-dropdown align="right" >
                         <x-slot name="trigger">
                             <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white focus:outline-none transition ease-in-out duration-150">
@@ -46,7 +46,7 @@
                         </x-slot>
                     </x-dropdown>
                 </div>
-                <div class="flex gap-4">
+                <div class="sm:flex gap-4 hidden">
                    <a href="{{route('login')}}" class="bg-color2 h-max rounded-full px-6 py-2 text-white cursor-pointer font-semibold hover:bg-transparent hover:text-white transition-all ease-in-out duration-300 hover:outline hover:outline-color2 text-xs">Sign In</a>
                    <a href="{{route('register')}}" class="bg-color3 h-max rounded-full px-6 py-2 text-white cursor-pointer font-semibold hover:text-white hover:bg-transparent transition-all ease-in-out duration-300 hover:outline hover:outline-color3 text-xs">Sign Up</a>
                 </div>
@@ -55,7 +55,7 @@
 
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -68,30 +68,37 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+            <x-responsive-nav-link :textColor="'text-white'" :href="url('/')" :active="request()->url() === url('/')">
+                {{ __('Home') }}
+            </x-responsive-nav-link>
+            
+            
+            <x-responsive-nav-link :textColor="'text-white'" :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                {{ __('Profile') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :textColor="'text-white'" :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                {{ __('About Us') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :textColor="'text-white'" :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                {{ __('Carrer') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :textColor="'text-white'" :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                {{ __('Contact') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :textColor="'text-white'" :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                {{ __('Kupon') }}
             </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
-           
-
             <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
+                <x-responsive-nav-link :textColor="'text-white'" :href="route('login')">
+                    {{ __('Sign Up') }}
                 </x-responsive-nav-link>
-
-                <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-
-                    <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                    </x-responsive-nav-link>
-                </form>
+                <x-responsive-nav-link :textColor="'text-white'" :href="route('register')">
+                    {{ __('Sign In') }}
+                </x-responsive-nav-link>
             </div>
         </div>
     </div>
