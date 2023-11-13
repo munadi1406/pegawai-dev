@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Hasnur Riung Sinergi</title>
-    <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" type="image/png">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }}" type="image/png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -29,29 +29,29 @@
             </div>
         </div>
         <div class="justify-center items-center lg:flex hidden">
-            <img src="{{ asset('images/foto1.jpg') }}" class="w-56 h-56 object-cover -top-32 left-10 relative z-20" />
-            <img src="{{ asset('images/foto2.jpg') }}" class="w-56 h-56 object-cover relative z-10" />
-            <img src="{{ asset('images/foto3.jpg') }}" class="w-56 h-56 object-cover top-32 right-10 relative z-0" />
+            <img src="{{ asset('assets/images/foto1.jpg') }}" class="w-56 h-56 object-cover -top-32 left-10 relative z-20" />
+            <img src="{{ asset('assets/images/foto2.jpg') }}" class="w-56 h-56 object-cover relative z-10" />
+            <img src="{{ asset('assets/images/foto3.jpg') }}" class="w-56 h-56 object-cover top-32 right-10 relative z-0" />
         </div>
     </div>
     <div
         class="flex flex-wrap justify-center items-center gap-2 px-2 py-10 bg-gradient-to-b from-color2/10 to-transparent relative">
         <div class=" -top-[150px] sm:-top-[220px] lg:-top-[200px] -left-24 absolute z-20  w-full">
-            <img src="{{ asset('images/foto4.png') }}" class="z-20 " />
+            <img src="{{ asset('assets/images/foto4.png') }}" class="z-20 " />
         </div>
-        {{-- <img src="{{ asset('images/foto5.png') }}" class=" w-72 right-0 absolute bottom-0 z-20" /> --}}
+        {{-- <img src="{{ asset('assets/images/foto5.png') }}" class=" w-72 right-0 absolute bottom-0 z-20" /> --}}
         <div
             class="lg:text-color2 bg-color2/40 text-white lg:bg-transparent backdrop-blur-sm rounded-md font-semibold capitalize  text-center text-3xl w-max px-2 py-1 relative z-30">
             our
             business</div>
         <div class="flex flex-wrap justify-center items-center gap-2 p-2">
-            <x-cardLandingPage :img="'images/distribution.png'" text="'Logistic'" />
-            <x-cardLandingPage :img="'images/forestry.png'" text="'Agro Foresty'" />
-            <x-cardLandingPage :img="'images/energy.png'" text="'Energy'" />
-            <x-cardLandingPage :img="'images/technology.png'" text="'technology and services'" />
-            <x-cardLandingPage :img="'images/education.png'" text="'education'" />
-            <x-cardLandingPage :img="'images/consumer.png'" text="'consumer'" />
-            <x-cardLandingPage :img="'images/invesment.png'" text="'invesment'" />
+            <x-cardLandingPage :img="'assets/images/distribution.png'" text="'Logistic'" />
+            <x-cardLandingPage :img="'assets/images/forestry.png'" text="'Agro Foresty'" />
+            <x-cardLandingPage :img="'assets/images/energy.png'" text="'Energy'" />
+            <x-cardLandingPage :img="'assets/images/technology.png'" text="'technology and services'" />
+            <x-cardLandingPage :img="'assets/images/education.png'" text="'education'" />
+            <x-cardLandingPage :img="'assets/images/consumer.png'" text="'consumer'" />
+            <x-cardLandingPage :img="'assets/images/invesment.png'" text="'invesment'" />
         </div>
     </div>
     <div
@@ -61,12 +61,12 @@
         </div>
         <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 w-full gap-2 px-4 h-full  ">
             @for ($i = 0; $i < 4; $i++)
-                <x-card-news image="images/foto{{ $i + 1 }}.jpg" title="Lorem ipsum dolor sit amet consectetur."
+                <x-card-news image="assets/images/foto{{ $i + 1 }}.jpg" title="Lorem ipsum dolor sit amet consectetur."
                     link="login"
                     desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dolorem culpa error beatae, iure dolores esse" />
             @endfor
             <div class="md:col-span-2 col-span-1 relative rounded-md overflow-clip md:h-full min-h-[300px] ">
-                <img src="{{ asset('images/foto6.jpg') }}"
+                <img src="{{ asset('assets/images/foto6.jpg') }}"
                     class="w-full h-full absolute top-0 left-0 object-cover z-0" />
                 <div class="relative z-10 w-full h-full flex justify-center items-center flex-col">
                     <h4 class="text-2xl font-semibold text-center text-white" style="text-shadow: 1px 1px 1px #FFC436">
