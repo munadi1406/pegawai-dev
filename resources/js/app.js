@@ -1,16 +1,16 @@
 import './bootstrap';
 
-import Alpine from 'alpinejs';
+// import Alpine from 'alpinejs';
 
-window.Alpine = Alpine;
+// window.Alpine = Alpine;
 
-Alpine.start();
+// Alpine?.start();
 
 
 const year = document.getElementById('yearCopyright');
-console.log(year);
 
 const date = new Date().getFullYear();
-console.log(date);
 
-year.textContent = date;
+if(year){
+    year.textContent = date;
+}

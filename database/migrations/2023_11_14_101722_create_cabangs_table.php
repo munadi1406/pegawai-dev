@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateTestsTable extends Migration
+class CreateCabangsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,10 @@ class CreateTestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tests', function (Blueprint $table) {
+        Schema::create('cabangs', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('nama_tabel')->nullable();
+            $table->string('nama_cabang')->nullable();
             });
     }
 
@@ -26,6 +26,6 @@ class CreateTestsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tests');
+        Schema::drop('cabangs');
     }
 }

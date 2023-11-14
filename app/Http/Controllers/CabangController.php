@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 
-use App\Models\Test;
+use App\Models\cabang;
 use Illuminate\Http\Request;
 
-class TestController extends Controller
+class CabangController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,13 +21,13 @@ class TestController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $test = Test::where('nama_tabel', 'LIKE', "%$keyword%")
+            $cabang = cabang::where('nama_cabang', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $test = Test::latest()->paginate($perPage);
+            $cabang = cabang::latest()->paginate($perPage);
         }
 
-        return view('test.index', compact('test'));
+        return view('cabang.index', compact('cabang'));
     }
 
     /**
@@ -37,7 +37,7 @@ class TestController extends Controller
      */
     public function create()
     {
-        return view('test.create');
+        return view('cabang.create');
     }
 
     /**
@@ -52,9 +52,9 @@ class TestController extends Controller
         
         $requestData = $request->all();
         
-        Test::create($requestData);
+        cabang::create($requestData);
 
-        return redirect('test')->with('flash_message', 'Test added!');
+        return redirect('cabang')->with('flash_message', 'cabang added!');
     }
 
     /**
@@ -66,9 +66,9 @@ class TestController extends Controller
      */
     public function show($id)
     {
-        $test = Test::findOrFail($id);
+        $cabang = cabang::findOrFail($id);
 
-        return view('test.show', compact('test'));
+        return view('cabang.show', compact('cabang'));
     }
 
     /**
@@ -80,9 +80,9 @@ class TestController extends Controller
      */
     public function edit($id)
     {
-        $test = Test::findOrFail($id);
+        $cabang = cabang::findOrFail($id);
 
-        return view('test.edit', compact('test'));
+        return view('cabang.edit', compact('cabang'));
     }
 
     /**
@@ -98,10 +98,10 @@ class TestController extends Controller
         
         $requestData = $request->all();
         
-        $test = Test::findOrFail($id);
-        $test->update($requestData);
+        $cabang = cabang::findOrFail($id);
+        $cabang->update($requestData);
 
-        return redirect('test')->with('flash_message', 'Test updated!');
+        return redirect('cabang')->with('flash_message', 'cabang updated!');
     }
 
     /**
@@ -113,8 +113,8 @@ class TestController extends Controller
      */
     public function destroy($id)
     {
-        Test::destroy($id);
+        cabang::destroy($id);
 
-        return redirect('test')->with('flash_message', 'Test deleted!');
+        return redirect('cabang')->with('flash_message', 'cabang deleted!');
     }
 }

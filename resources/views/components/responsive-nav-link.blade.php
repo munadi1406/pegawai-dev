@@ -1,4 +1,4 @@
-@props(['active','textColor'])
+@props(['active','textColor'=>'text-black'])
 
 @php
 $classes = ($active ?? false)

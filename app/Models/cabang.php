@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Test extends Model
+class cabang extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'tests';
+    protected $table = 'cabangs';
 
     /**
     * The database primary key value.
@@ -25,7 +25,7 @@ class Test extends Model
      *
      * @var array
      */
-    protected $fillable = ['nama_tabel'];
+    protected $fillable = ['nama_cabang'];
 
     
 }

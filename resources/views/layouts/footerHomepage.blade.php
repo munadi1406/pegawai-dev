@@ -1,4 +1,4 @@
-<div class="px-6 py-2 grid grid-cols-4 gap-2">
+<div class="px-6 py-2 grid lg:grid-cols-4 gap-2 md:grid-cols-2 grid-cols-1">
     <div class="flex flex-col gap-2 ">
         <div>
             <h4 class="text-xl font-semibold text-color2 ">Kantor Pusat</h4>
@@ -15,7 +15,7 @@
     </div>
     <div class="flex flex-col gap-2 ">
         <h4 class="text-xl font-semibold text-color2 ">Kantor Perwakilan</h4>
-        <div class="flex gap-2">
+        <div class="flex gap-2 flex-wrap">
             <div>
                 <div>
                     <p class="text-lg font-semibold text-color3">South Kalimantan</p>
